@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { Section, Title, FilterInput } from "./Filter.styled";
 
 export default class Filter extends Component {
   render() {
     return (
-      <>
-        <h3>{this.props.title}</h3>
-        <input type="text" onChange={this.props.onChange} />
-      </>
+      <Section>
+        <Title>{this.props.title}</Title>
+        <FilterInput type="text" onChange={this.props.onChange} />
+      </Section>
     );
   }
 }

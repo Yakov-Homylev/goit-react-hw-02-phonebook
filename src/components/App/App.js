@@ -64,18 +64,17 @@ class App extends Component {
       <div>
         <h1>Phonebook</h1>
         <ContactForm onSubmitForm={this.onSubmitForm} />
-        <div>
-          <h2>Contacts</h2>
-          <Filter
-            type="text"
-            title="Find contacts by name"
-            onChange={this.searchByName}
-          />
-          <ContactList
-            array={contactsArray}
-            removeContact={this.removeContactById}
-          />
-        </div>
+
+        <h2>Contacts</h2>
+        <Filter
+          type="text"
+          title="Find contacts by name"
+          onChange={this.searchByName}
+        />
+        <ContactList
+          array={contactsArray}
+          removeContact={this.removeContactById}
+        />
       </div>
     );
   }
