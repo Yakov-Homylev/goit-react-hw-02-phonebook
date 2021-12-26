@@ -1,12 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {
-  List,
-  Item,
-  NumberSpan,
-  DeleteButton,
-  Notification,
-} from "./ContactList.styled";
+import ContactItem from "./ContactItem";
+import { List, Notification } from "./ContactList.styled";
 
 export default function ContactList({ array, removeContact }) {
   return (
@@ -14,12 +9,13 @@ export default function ContactList({ array, removeContact }) {
       {array.length > 0 ? (
         array.map((el) => {
           return (
-            <Item key={el.id}>
-              {el.name + ":"} <NumberSpan>{el.number}</NumberSpan>
-              <DeleteButton type="button" onClick={() => removeContact(el.id)}>
-                Delete
-              </DeleteButton>
-            </Item>
+            <ContactItem
+              key={el.id}
+              id={el.id}
+              name={el.name}
+              number={el.number}
+              OnClick={removeContact}
+            />
           );
         })
       ) : (

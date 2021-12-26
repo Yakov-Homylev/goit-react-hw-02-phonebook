@@ -2,12 +2,16 @@ import styled from "@emotion/styled";
 
 export const List = styled.ul`
   list-style: none;
-  padding: 0px;
+  padding: 4px;
   margin: 0px;
 `;
 
 export const Item = styled.li`
   padding: 4px;
+
+  :not(:last-child) {
+    margin-bottom: 10px;
+  }
 `;
 
 export const NumberSpan = styled.span`
